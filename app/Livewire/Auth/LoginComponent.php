@@ -14,10 +14,10 @@ use Livewire\Component;
 class LoginComponent extends Component
 {
     #[Validate(['required', 'string', 'email', 'max:255'])]
-    public ?string $email;
+    public ?string $email = 'admin@admin.com';
 
     #[Validate(['required', 'string', 'max:255'])]
-    public ?string $password;
+    public ?string $password = 'password';
 
     public ?bool $remember = false;
 

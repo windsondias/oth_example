@@ -20,7 +20,7 @@ class CreateUserAction
             'avatar' => $path
         ]);
 
-        self::notify($user);
+//        self::notify($user);
 
         return $user;
     }
