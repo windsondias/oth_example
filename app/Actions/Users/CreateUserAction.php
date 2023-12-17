@@ -20,7 +20,9 @@ class CreateUserAction
             'avatar' => $path
         ]);
 
-        self::notify($user);
+        if (app()->isLocal()) {
+            self::notify($user);
+        }
 
         return $user;
     }
