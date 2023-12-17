@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocalizationController;
 use App\Livewire\Auth\LoginComponent;
 use App\Livewire\Auth\ResetPasswordComponent;
 use App\Livewire\Chats\IndexChatComponent;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/locale/{locale}', LocalizationController::class)->name('locale');
 
 Route::middleware('guest')->group(function (){
     Route::get('/login', LoginComponent::class)->name('login');

@@ -8,8 +8,16 @@
     </div>
     <div class="card w-full bg-base-100 shadow-xl">
         <div class="card-body">
-            <h2 class="card-title">Links</h2>
             <div>
+                <x-button class="btn btn-outline btn-error" no-wire-navigate :link="route('locale', 'en')">English</x-button>
+                <x-button class="btn btn-outline btn-warning" no-wire-navigate :link="route('locale', 'es')">Spanish</x-button>
+                <x-button class="btn btn-outline btn-success" no-wire-navigate :link="route('locale', 'pt_BR')">Portuguese</x-button>
+            </div>
+            <h2 class="card-title">{{ __('example.welcome') }}</h2>
+            <h3>{{ __('This is a small example application using Livewire with the Laravel framework') }}</h3>
+            <div>
+                <h4 class="text-lg font-bold">Links</h4>
+
                 <div>
                     Repository Git: <a class="link" target="_blank" href="https://github.com/windsondias/oth_example">https://github.com/windsondias/oth_example</a>
                 </div>
