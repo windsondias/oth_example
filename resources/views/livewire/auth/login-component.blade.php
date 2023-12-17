@@ -1,5 +1,5 @@
 <x-form wire:submit="submit">
-    <x-input label="E-mail" wire:model="email" />
+    <x-input label="E-mail" wire:model="email" autofocus />
     <x-input label="Password" type="password" wire:model="password" />
     <x-checkbox label="Remember me" wire:model="remember" />
 
