@@ -43,14 +43,16 @@ class FormCommentComponent extends Component
                 : UpdateCommentAction::run($this->comment, $data);
 
             empty($this->comment)
-                ? $this->success('Comment created successful')
-                : $this->success('Comment updated successful');
+                ? $this->success('Comment created successfully')
+                : $this->success('Comment updated successfully');
 
             $this->reset('comment', 'message');
 
             $this->dispatch('refresh-comments');
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            empty($this->comment)
+                ? $this->error('An error occurred while creating the comment, please try again')
+                : $this->error('An error occurred while updating the comment, please try again');
             Log::error('FormCommentComponent', [$throwable->getMessage()]);
         }
     }

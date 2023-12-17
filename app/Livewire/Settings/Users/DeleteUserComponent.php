@@ -34,8 +34,10 @@ class DeleteUserComponent extends Component
             $this->dispatch('refresh-users');
 
             $this->reset();
+
+            $this->success('User deleted successfully');
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            $this->error('An error occurred while deleting the user, please try again');
             Log::error('DeleteUserComponent', [$throwable->getMessage()]);
         }
     }

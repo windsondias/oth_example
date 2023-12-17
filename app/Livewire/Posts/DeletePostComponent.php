@@ -34,8 +34,10 @@ class DeletePostComponent extends Component
             $this->dispatch('refresh-posts');
 
             $this->reset();
+
+            $this->success('Post deleted successfully');
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            $this->error('An error occurred while deleting the post, please try again');
             Log::error('DeletePostComponent', [$throwable->getMessage()]);
         }
     }

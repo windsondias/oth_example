@@ -54,12 +54,14 @@ class FormUserComponent extends Component
                 : UpdateUserAction::run($this->user, $data);
 
             empty($this->user)
-                ? $this->success('User created successful')
-                : $this->success('User updated successful');
+                ? $this->success('User created successfully')
+                : $this->success('User updated successfully');
 
             $this->redirectRoute('users.index', navigate: true);
         }catch (\Throwable $throwable){
-            $this->error('A error ...');
+            empty($this->user)
+                ? $this->error('An error occurred while creating the user, please try again')
+                : $this->error('An error occurred while updating the user, please try again');
             Log::error('FormUserComponent', [$throwable->getMessage()]);
         }
     }

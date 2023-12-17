@@ -42,12 +42,14 @@ class FormPostComponent extends Component
                 : UpdatePostAction::run($this->post, $data);
 
             empty($this->post)
-                ? $this->success('Post created successful')
-                : $this->success('Post updated successful');
+                ? $this->success('Post created successfully')
+                : $this->success('Post updated successfully');
 
             $this->redirectRoute('posts.index', navigate: true);
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            empty($this->post)
+                ? $this->error('An error occurred while creating the post, please try again')
+                : $this->error('An error occurred while updating the post, please try again');
             Log::error('FormPostComponent', [$throwable->getMessage()]);
         }
     }

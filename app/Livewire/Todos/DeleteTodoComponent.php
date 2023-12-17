@@ -34,8 +34,10 @@ class DeleteTodoComponent extends Component
             $this->dispatch('refresh-todos');
 
             $this->reset();
+
+            $this->success('To do deleted successfully');
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            $this->error('An error occurred while deleting the to do, please try again');
             Log::error('DeleteTodoComponent', [$throwable->getMessage()]);
         }
     }

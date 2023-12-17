@@ -34,8 +34,10 @@ class DeleteCommentComponent extends Component
             $this->dispatch('refresh-comments');
 
             $this->reset();
+
+            $this->success('Comment deleted successfully');
         }catch (\Throwable $throwable){
-            $this->error('Error');
+            $this->error('An error occurred while deleting the comment, please try again');
             Log::error('DeleteCommentComponent', [$throwable->getMessage()]);
         }
     }

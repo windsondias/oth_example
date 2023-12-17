@@ -39,13 +39,15 @@ class FormTodoComponent extends Component
                 : UpdateTodoAction::run($this->todo, $data);
 
             empty($this->todo)
-                ? $this->success('To do created successful')
-                : $this->success('To do updated successful');
+                ? $this->success('To do created successfully')
+                : $this->success('To do updated successfully');
 
             $this->dispatch('refresh-todos');
             $this->reset();
         }catch (\Throwable $throwable){
-            $this->error('Error on creating');
+            empty($this->todo)
+                ? $this->error('An error occurred while creating the to do, please try again')
+                : $this->error('An error occurred while updating the to do, please try again');
             Log::error('FormTodoComponent', [$throwable->getMessage()]);
         }
     }

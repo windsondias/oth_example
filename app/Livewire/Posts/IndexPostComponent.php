@@ -3,6 +3,7 @@
 namespace App\Livewire\Posts;
 
 use App\Models\Post;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,7 @@ class IndexPostComponent extends Component
     ];
 
     #[Computed]
-    public function posts()
+    public function posts(): LengthAwarePaginator
     {
         return Post::query()
             ->when(!empty($this->search), function (Builder $query){

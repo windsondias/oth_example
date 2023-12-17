@@ -4,6 +4,7 @@ namespace App\Livewire\Posts\Comments;
 
 use App\Models\Post;
 use Illuminate\Contracts\View\View;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -19,7 +20,7 @@ class IndexCommentComponent extends Component
     ];
 
     #[Computed]
-    public function comments()
+    public function comments(): LengthAwarePaginator
     {
         return $this->post->comments()->orderByDesc('id')->paginate(2);
     }
