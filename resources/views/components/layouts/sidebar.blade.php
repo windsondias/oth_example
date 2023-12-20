@@ -32,6 +32,7 @@
             <x-menu-item title="Home" icon="o-home" link="/" />
             <x-menu-item title="To do" icon="o-check" :link="route('todos.index')" />
             <x-menu-item title="Posts" icon="o-document-text" :link="route('posts.index')" />
+            <x-menu-item title="Posts Lazy Loading" icon="o-document-text" :link="route('posts.index.lazy')" />
             <x-menu-item title="GPT" icon="o-chat-bubble-bottom-center-text" :link="route('gpt.index')" />
 
             <x-menu-sub title="Settings" icon="o-cog-6-tooth">

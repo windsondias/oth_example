@@ -6,6 +6,7 @@ use App\Livewire\Auth\ResetPasswordComponent;
 use App\Livewire\Chats\IndexChatComponent;
 use App\Livewire\HomeComponent;
 use App\Livewire\Posts\FormPostComponent;
+use App\Livewire\Posts\IndexLazyPostComponent;
 use App\Livewire\Posts\IndexPostComponent;
 use App\Livewire\Posts\ShowPostComponent;
 use App\Livewire\Settings\Users\FormUserComponent;
@@ -44,6 +45,7 @@ Route::middleware('auth')->group(function (){
 
     Route::name('posts.')->prefix('/posts')->group(function (){
         Route::get('/', IndexPostComponent::class)->name('index');
+        Route::get('/lazy', IndexLazyPostComponent::class)->name('index.lazy');
         Route::get('/create', FormPostComponent::class)->name('create');
         Route::get('/{post}', ShowPostComponent::class)->name('show');
         Route::get('/{post}/edit', FormPostComponent::class)->name('edit');
