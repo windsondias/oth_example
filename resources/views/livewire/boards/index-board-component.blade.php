@@ -9,7 +9,7 @@
     </div>
     <div class="flex w-full gap-3">
         <div class="w-1/2">
-            <livewire:boards.calendar-component lazy />
+            <livewire:boards.calendar-component />
         </div>
         <div class="flex flex-col w-1/2 gap-3">
             <livewire:boards.charts.bar-chart-component />
