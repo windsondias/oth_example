@@ -30,6 +30,7 @@
 
         <x-menu activate-by-route active-bg-color="bg-base-300/10">
             <x-menu-item title="Home" icon="o-home" link="/" />
+            <x-menu-item title="Boards" icon="o-chart-pie" :link="route('boards.index')" />
             <x-menu-item title="To do" icon="o-check" :link="route('todos.index')" />
             <x-menu-item title="Posts" icon="o-document-text" :link="route('posts.index')" />
             <x-menu-item title="Posts Lazy Loading" icon="o-document-text" :link="route('posts.index.lazy')" />

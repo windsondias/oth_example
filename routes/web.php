@@ -3,6 +3,7 @@
 use App\Http\Controllers\LocalizationController;
 use App\Livewire\Auth\LoginComponent;
 use App\Livewire\Auth\ResetPasswordComponent;
+use App\Livewire\Boards\IndexBoardComponent;
 use App\Livewire\Chats\IndexChatComponent;
 use App\Livewire\HomeComponent;
 use App\Livewire\Posts\FormPostComponent;
@@ -35,6 +36,7 @@ Route::middleware('guest')->group(function (){
 Route::middleware('auth')->group(function (){
     Route::get('/', HomeComponent::class)->name('home');
     Route::get('/todos', IndexTodoComponent::class)->name('todos.index');
+    Route::get('/boards', IndexBoardComponent::class)->name('boards.index');
     Route::get('/gpt', IndexChatComponent::class)->name('gpt.index');
 
     Route::name('users.')->prefix('/users')->group(function (){

@@ -17,6 +17,8 @@
         } catch (e) {
         }
     </script>
+
+    @stack('styles')
 </head>
 <body class="min-h-screen antialiased">
 <div
@@ -53,5 +55,7 @@
     </div>
 </div>
 <x-toast/>
+
+@stack('scripts')
 </body>
 </html>
